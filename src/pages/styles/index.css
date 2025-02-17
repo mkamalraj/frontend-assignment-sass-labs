@@ -5,12 +5,14 @@
   justify-content: center;
   padding: 2% 5%;
   text-align: center;
+  min-height: 70vh; 
 }
 
 table {
   width: 80%;
   max-width: 800px;
   border-collapse: collapse;
+  min-height: 300px;
 }
 
 tr:hover {
@@ -25,31 +27,37 @@ td {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f2f2f2; /* Light grey for even rows */
+  background-color: #f2f2f2; 
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #fff; /* White for odd rows */
+  background-color: #fff; 
+}
+
+th {
+  background: #007bff;
+  color: white;
 }
 
 @media (max-width: 768px) {
   table {
-    width: 95%; /* Adjust width for smaller screens */
+    width: 95%;
   }
 
   th,
   td {
-    padding: 8px; /* Reduce padding for mobile */
-    font-size: 14px; /* Adjust font size */
+    padding: 8px;
+    font-size: 14px;
   }
 }
 
 .pagination-container {
-  margin-top: 20px;
-  margin-right: 100px;
+  position: sticky;
+  bottom: 20px;
+  width: 100%;
   text-align: center;
   font-size: 18px;
-  float: right;
+  margin-top: 20px;
 }
 
 .pagination-item {
@@ -61,6 +69,7 @@ tbody tr:nth-child(odd) {
   border: 1px solid #007bff;
   border-radius: 5px;
   display: inline-block;
+  background: white;
 }
 
 .pagination-item.active {
@@ -76,19 +85,16 @@ tbody tr:nth-child(odd) {
   padding: 10px;
 }
 
-th {
-  background: #007bff;
-}
-
 .heading {
   font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   background: #007bff;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   height: 50px;
   width: 100%;
   color: white;
   border-radius: 8px;
   text-align: center;
+  line-height: 50px;
 }

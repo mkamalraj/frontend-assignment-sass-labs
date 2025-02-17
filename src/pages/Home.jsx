@@ -4,14 +4,13 @@ import "../pages/styles/index.css";
 const API_URL =
   "https://raw.githubusercontent.com/saaslabsco/frontend-assignment/refs/heads/master/frontend-assignment.json";
 
-// Function to generate pagination numbers with dots
 const getPageNumbers = (totalPages, currentPage) => {
   if (totalPages <= 10)
     return Array.from({ length: totalPages }, (_, i) => i + 1);
 
-  const pages = [1, 2]; // Always include first two pages
+  const pages = [1, 2];
 
-  if (currentPage > 5) pages.push("..."); // Dots after 2
+  if (currentPage > 5) pages.push("...");
 
   const middlePages = [currentPage - 1, currentPage, currentPage + 1].filter(
     (p) => p > 2 && p < totalPages - 1
@@ -19,9 +18,9 @@ const getPageNumbers = (totalPages, currentPage) => {
 
   pages.push(...middlePages);
 
-  if (currentPage < totalPages - 4) pages.push("..."); // Dots before last two pages
+  if (currentPage < totalPages - 4) pages.push("...");
 
-  pages.push(totalPages - 1, totalPages); // Always include last two pages
+  pages.push(totalPages - 1, totalPages);
 
   return pages;
 };
@@ -62,7 +61,7 @@ const Home = () => {
               <tr key={indexOfFirstRecord + index}>
                 <td>{project["s.no"]}</td>
                 <td>{project["percentage.funded"]}%</td>
-                <td>${project["amt.pledged"]}</td>
+                <td>{project["amt.pledged"]}</td>
               </tr>
             ))}
           </tbody>
